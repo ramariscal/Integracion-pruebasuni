@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  apitienda:
+    build:
+      context: ./api_tienda/
+      dockerfile: Dockerfile
+    volumes:
+      - ./api_tienda/app:/app
+    ports:
+      - 5000:5000
+
+  tbkemu:
+    build:
+      context: ./tbkemu/
+      dockerfile: Dockerfile
+    volumes:
+      - ./tbkemu/app:/app
+    ports:
+      - 8888:80
